@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
   <meta name="theme-color" content="#0e1014">
-  <meta name="description" content="LifePath — personalized planning for weddings, baby preparation and traditional astrology.">
+
+  <meta
+    name="description"
+    content="LifePath — personalized planning for weddings, baby preparation and traditional astrology."
+  >
+
   <link rel="manifest" href="manifest.json">
+
   <title>LifePath: Wedding, Baby & Astro</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,22 +23,36 @@
 <main class="app-shell">
 
 <header class="topbar">
+
   <button class="brand" onclick="goHome()">
     <span class="brand-mark">L</span>
     <span>LifePath</span>
   </button>
 
-  <button id="resetBtn" class="icon-btn hidden" onclick="resetApp()">↺</button>
+  <button
+    id="resetBtn"
+    class="icon-btn hidden"
+    onclick="resetApp()"
+  >
+    ↺
+  </button>
+
 </header>
 
-<!-- SCREEN 1 -->
+
+<!-- =========================
+     SCREEN 1 — HOME
+========================= -->
+
 <section id="screen1" class="screen active">
 
   <div class="hero">
 
     <div class="hero-icon">✦</div>
 
-    <p class="eyebrow">LIFE'S IMPORTANT MOMENTS</p>
+    <p class="eyebrow">
+      LIFE'S IMPORTANT MOMENTS
+    </p>
 
     <h1>
       Plan the moment.<br>
@@ -44,31 +66,72 @@
 
   </div>
 
+
   <div class="card-grid">
 
-    <button class="choice-card" onclick="chooseJourney('wedding')">
+    <button
+      class="choice-card"
+      onclick="chooseJourney('wedding')"
+    >
+
       <span class="emoji">💍</span>
-      <strong>My Wedding</strong>
-      <small>Budget, vendors, timeline & tasks</small>
+
+      <strong>
+        My Wedding
+      </strong>
+
+      <small>
+        Budget, vendors, timeline & tasks
+      </small>
+
     </button>
 
-    <button class="choice-card" onclick="chooseJourney('pregnancy')">
+
+    <button
+      class="choice-card"
+      onclick="chooseJourney('pregnancy')"
+    >
+
       <span class="emoji">🤰</span>
-      <strong>Baby Preparation</strong>
-      <small>Hospital, documents & essentials</small>
+
+      <strong>
+        Baby Preparation
+      </strong>
+
+      <small>
+        Hospital, documents & essentials
+      </small>
+
     </button>
 
-    <button class="choice-card" onclick="chooseJourney('astrology')">
+
+    <button
+      class="choice-card"
+      onclick="chooseJourney('astrology')"
+    >
+
       <span class="emoji">🔮</span>
-      <strong>My Astrology Plan</strong>
-      <small>Traditional guidance & planning</small>
+
+      <strong>
+        My Astrology Plan
+      </strong>
+
+      <small>
+        Traditional guidance & planning
+      </small>
+
     </button>
 
   </div>
 
-  <button class="primary full" onclick="showScreen(2)">
+
+  <button
+    class="primary full"
+    onclick="showScreen(2)"
+  >
     Explore All →
   </button>
+
 
   <p class="tiny center">
     No account required to create your first plan.
@@ -77,43 +140,68 @@
 </section>
 
 
-<!-- SCREEN 2 -->
+<!-- =========================
+     SCREEN 2 — JOURNEY
+========================= -->
+
 <section id="screen2" class="screen">
 
-  <p class="eyebrow">STEP 1 OF 4</p>
+  <p class="eyebrow">
+    STEP 1 OF 4
+  </p>
 
-  <h2>What are you preparing for?</h2>
+  <h2>
+    What are you preparing for?
+  </h2>
 
   <p class="sub">
     Choose a journey to create your personalized plan.
   </p>
 
+
   <div class="stack">
 
-    <button class="journey-card" onclick="chooseJourney('wedding')">
+    <button
+      class="journey-card"
+      onclick="chooseJourney('wedding')"
+    >
+
       <span>💍</span>
 
       <div>
-        <strong>My Wedding</strong>
+
+        <strong>
+          My Wedding
+        </strong>
+
         <small>
           Plan budget, guests, vendors and timeline.
         </small>
+
       </div>
 
       <b>→</b>
+
     </button>
 
 
-    <button class="journey-card" onclick="chooseJourney('pregnancy')">
+    <button
+      class="journey-card"
+      onclick="chooseJourney('pregnancy')"
+    >
 
       <span>🤰</span>
 
       <div>
-        <strong>Baby Preparation</strong>
+
+        <strong>
+          Baby Preparation
+        </strong>
 
         <small>
           Organize preparation and hospital checklists.
         </small>
+
       </div>
 
       <b>→</b>
@@ -121,16 +209,23 @@
     </button>
 
 
-    <button class="journey-card" onclick="chooseJourney('astrology')">
+    <button
+      class="journey-card"
+      onclick="chooseJourney('astrology')"
+    >
 
       <span>🔮</span>
 
       <div>
-        <strong>My Astrology Plan</strong>
+
+        <strong>
+          My Astrology Plan
+        </strong>
 
         <small>
           Explore traditional astrology information.
         </small>
+
       </div>
 
       <b>→</b>
@@ -138,6 +233,7 @@
     </button>
 
   </div>
+
 
   <div class="notice">
 
@@ -152,32 +248,53 @@
 </section>
 
 
-<!-- SCREEN 3 -->
+<!-- =========================
+     SCREEN 3 — QUESTIONS
+========================= -->
+
 <section id="screen3" class="screen">
 
   <div class="progress">
     <span id="progressBar"></span>
   </div>
 
-  <p id="stepLabel" class="eyebrow">
+
+  <p
+    id="stepLabel"
+    class="eyebrow"
+  >
     STEP 2 OF 4
   </p>
+
 
   <h2 id="questionTitle">
     Let's personalize your plan.
   </h2>
 
-  <p id="questionHint" class="sub"></p>
+
+  <p
+    id="questionHint"
+    class="sub"
+  ></p>
+
 
   <div id="questionArea"></div>
 
+
   <div class="nav-row">
 
-    <button class="secondary" onclick="prevQuestion()">
+    <button
+      class="secondary"
+      onclick="prevQuestion()"
+    >
       Back
     </button>
 
-    <button class="primary" onclick="nextQuestion()">
+
+    <button
+      class="primary"
+      onclick="nextQuestion()"
+    >
       Next →
     </button>
 
@@ -186,10 +303,16 @@
 </section>
 
 
-<!-- SCREEN 4 -->
+<!-- =========================
+     SCREEN 4 — RESULT
+========================= -->
+
 <section id="screen4" class="screen">
 
-  <p class="eyebrow">YOUR RESULT</p>
+  <p class="eyebrow">
+    YOUR RESULT
+  </p>
+
 
   <div class="result-head">
 
@@ -199,9 +322,13 @@
         Your plan
       </h2>
 
-      <p id="resultSubtitle" class="sub"></p>
+      <p
+        id="resultSubtitle"
+        class="sub"
+      ></p>
 
     </div>
+
 
     <div class="score-ring">
 
@@ -213,47 +340,80 @@
 
   </div>
 
+
   <div id="resultBody"></div>
 
-  <button class="primary full" onclick="showScreen(5)">
+
+  <button
+    class="primary full"
+    onclick="showScreen(5)"
+  >
     Build My Full Plan →
   </button>
 
-  <button class="secondary full" onclick="shareResult()">
+
+  <button
+    class="secondary full"
+    onclick="shareResult()"
+  >
     Share My Result
   </button>
 
 </section>
 
 
-<!-- SCREEN 5 -->
+<!-- =========================
+     SCREEN 5 — FREE PLAN
+========================= -->
+
 <section id="screen5" class="screen">
 
-  <p class="eyebrow">YOUR FREE PLAN</p>
+  <p class="eyebrow">
+    YOUR FREE PLAN
+  </p>
+
 
   <h2 id="planTitle">
     Your LifePath
   </h2>
 
+
   <div id="planBody"></div>
 
-  <button class="primary full" onclick="showScreen(6)">
+
+  <button
+    class="primary full"
+    onclick="showScreen(6)"
+  >
     Unlock Complete Plan — ₹199
   </button>
 
-  <button class="secondary full" onclick="showScreen(6)">
+
+  <button
+    class="secondary full"
+    onclick="showScreen(6)"
+  >
     View ₹99 Quick Report
   </button>
 
 </section>
 
 
-<!-- SCREEN 6 -->
+<!-- =========================
+     SCREEN 6 — PRODUCTS
+========================= -->
+
 <section id="screen6" class="screen">
 
-  <p class="eyebrow">PERSONALIZED UPGRADE</p>
+  <p class="eyebrow">
+    PERSONALIZED UPGRADE
+  </p>
 
-  <h2>Choose your plan.</h2>
+
+  <h2>
+    Choose your plan.
+  </h2>
+
 
   <p class="sub">
     Start with a small one-time purchase.
@@ -261,36 +421,55 @@
   </p>
 
 
+  <!-- ₹99 -->
+
   <div class="price-card">
 
     <div class="price-top">
 
-      <span>Quick Report</span>
+      <span>
+        Quick Report
+      </span>
 
-      <strong>₹99</strong>
+      <strong>
+        ₹99
+      </strong>
 
     </div>
 
+
     <ul>
 
-      <li>Personalized summary</li>
+      <li>
+        Personalized summary
+      </li>
 
-      <li>Priority recommendations</li>
+      <li>
+        Priority recommendations
+      </li>
 
-      <li>Personalized checklist</li>
+      <li>
+        Personalized checklist
+      </li>
 
-      <li>Shareable report</li>
+      <li>
+        Shareable report
+      </li>
 
     </ul>
 
-    <button class="primary full" onclick="purchase('quick')">
 
+    <button
+      class="primary full"
+      onclick="purchase('quick')"
+    >
       Unlock for ₹99
-
     </button>
 
   </div>
 
+
+  <!-- ₹199 -->
 
   <div class="price-card featured">
 
@@ -298,35 +477,54 @@
       BEST VALUE
     </div>
 
+
     <div class="price-top">
 
-      <span>Complete Plan</span>
+      <span>
+        Complete Plan
+      </span>
 
-      <strong>₹199</strong>
+      <strong>
+        ₹199
+      </strong>
 
     </div>
 
+
     <ul>
 
-      <li>Everything in Quick Report</li>
+      <li>
+        Everything in Quick Report
+      </li>
 
-      <li>30-day preparation timeline</li>
+      <li>
+        30-day preparation timeline
+      </li>
 
-      <li>Priority checklist</li>
+      <li>
+        Priority checklist
+      </li>
 
-      <li>Planning worksheet</li>
+      <li>
+        Planning worksheet
+      </li>
 
-      <li>Printable/shareable version</li>
+      <li>
+        Printable/shareable version
+      </li>
 
     </ul>
 
-    <button class="primary full" onclick="purchase('complete')">
 
+    <button
+      class="primary full"
+      onclick="purchase('complete')"
+    >
       Get My Complete Plan — ₹199
-
     </button>
 
   </div>
+
 
   <p class="tiny center">
 
@@ -340,26 +538,45 @@
 </section>
 
 
-<!-- SCREEN 7 -->
+<!-- =========================
+     SCREEN 7 — SAVED PLAN
+========================= -->
+
 <section id="screen7" class="screen">
 
-  <p class="eyebrow">YOUR SAVED PLAN</p>
+  <p class="eyebrow">
+    YOUR SAVED PLAN
+  </p>
+
 
   <h2 id="savedTitle">
     Your LifePath Plan
   </h2>
 
+
   <div id="savedBody"></div>
 
-  <button class="primary full" onclick="sharePlan()">
+
+  <button
+    class="primary full"
+    onclick="sharePlan()"
+  >
     Share My Plan
   </button>
 
-  <button class="secondary full" onclick="editAnswers()">
+
+  <button
+    class="secondary full"
+    onclick="editAnswers()"
+  >
     Update Answers
   </button>
 
-  <button class="secondary full" onclick="startAnother()">
+
+  <button
+    class="secondary full"
+    onclick="startAnother()"
+  >
     Start Another Journey
   </button>
 
@@ -367,9 +584,54 @@
 
 </main>
 
-<div id="toast" class="toast"></div>
+
+<!-- TOAST -->
+
+<div
+  id="toast"
+  class="toast"
+></div>
+
+
+<!-- MAIN APP SCRIPT -->
 
 <script src="app.js"></script>
+
+
+<!-- SERVICE WORKER -->
+
+<script>
+
+  if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+      navigator.serviceWorker
+        .register("./service-worker.js")
+
+        .then(() => {
+
+          console.log(
+            "LifePath offline support enabled"
+          );
+
+        })
+
+        .catch(error => {
+
+          console.log(
+            "Service worker error:",
+            error
+          );
+
+        });
+
+    });
+
+  }
+
+</script>
+
 
 </body>
 </html>
