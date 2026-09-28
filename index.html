@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0e1014">
+  <meta name="description" content="LifePath — personalized planning for weddings, baby preparation and traditional astrology.">
+  <link rel="manifest" href="manifest.json">
+  <title>LifePath: Wedding, Baby & Astro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app-shell">
+
+<header class="topbar">
+  <button class="brand" onclick="goHome()">
+    <span class="brand-mark">L</span>
+    <span>LifePath</span>
+  </button>
+
+  <button id="resetBtn" class="icon-btn hidden" onclick="resetApp()">↺</button>
+</header>
+
+<!-- SCREEN 1 -->
+<section id="screen1" class="screen active">
+
+  <div class="hero">
+
+    <div class="hero-icon">✦</div>
+
+    <p class="eyebrow">LIFE'S IMPORTANT MOMENTS</p>
+
+    <h1>
+      Plan the moment.<br>
+      <span>Prepare for what's next.</span>
+    </h1>
+
+    <p class="sub">
+      Create a simple personalized plan for your wedding,
+      baby preparation, or traditional astrology journey.
+    </p>
+
+  </div>
+
+  <div class="card-grid">
+
+    <button class="choice-card" onclick="chooseJourney('wedding')">
+      <span class="emoji">💍</span>
+      <strong>My Wedding</strong>
+      <small>Budget, vendors, timeline & tasks</small>
+    </button>
+
+    <button class="choice-card" onclick="chooseJourney('pregnancy')">
+      <span class="emoji">🤰</span>
+      <strong>Baby Preparation</strong>
+      <small>Hospital, documents & essentials</small>
+    </button>
+
+    <button class="choice-card" onclick="chooseJourney('astrology')">
+      <span class="emoji">🔮</span>
+      <strong>My Astrology Plan</strong>
+      <small>Traditional guidance & planning</small>
+    </button>
+
+  </div>
+
+  <button class="primary full" onclick="showScreen(2)">
+    Explore All →
+  </button>
+
+  <p class="tiny center">
+    No account required to create your first plan.
+  </p>
+
+</section>
+
+
+<!-- SCREEN 2 -->
+<section id="screen2" class="screen">
+
+  <p class="eyebrow">STEP 1 OF 4</p>
+
+  <h2>What are you preparing for?</h2>
+
+  <p class="sub">
+    Choose a journey to create your personalized plan.
+  </p>
+
+  <div class="stack">
+
+    <button class="journey-card" onclick="chooseJourney('wedding')">
+      <span>💍</span>
+
+      <div>
+        <strong>My Wedding</strong>
+        <small>
+          Plan budget, guests, vendors and timeline.
+        </small>
+      </div>
+
+      <b>→</b>
+    </button>
+
+
+    <button class="journey-card" onclick="chooseJourney('pregnancy')">
+
+      <span>🤰</span>
+
+      <div>
+        <strong>Baby Preparation</strong>
+
+        <small>
+          Organize preparation and hospital checklists.
+        </small>
+      </div>
+
+      <b>→</b>
+
+    </button>
+
+
+    <button class="journey-card" onclick="chooseJourney('astrology')">
+
+      <span>🔮</span>
+
+      <div>
+        <strong>My Astrology Plan</strong>
+
+        <small>
+          Explore traditional astrology information.
+        </small>
+      </div>
+
+      <b>→</b>
+
+    </button>
+
+  </div>
+
+  <div class="notice">
+
+    Pregnancy content is organizational/educational only,
+    not medical advice.
+
+    Astrology content is traditional/cultural and
+    entertainment-oriented.
+
+  </div>
+
+</section>
+
+
+<!-- SCREEN 3 -->
+<section id="screen3" class="screen">
+
+  <div class="progress">
+    <span id="progressBar"></span>
+  </div>
+
+  <p id="stepLabel" class="eyebrow">
+    STEP 2 OF 4
+  </p>
+
+  <h2 id="questionTitle">
+    Let's personalize your plan.
+  </h2>
+
+  <p id="questionHint" class="sub"></p>
+
+  <div id="questionArea"></div>
+
+  <div class="nav-row">
+
+    <button class="secondary" onclick="prevQuestion()">
+      Back
+    </button>
+
+    <button class="primary" onclick="nextQuestion()">
+      Next →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- SCREEN 4 -->
+<section id="screen4" class="screen">
+
+  <p class="eyebrow">YOUR RESULT</p>
+
+  <div class="result-head">
+
+    <div>
+
+      <h2 id="resultTitle">
+        Your plan
+      </h2>
+
+      <p id="resultSubtitle" class="sub"></p>
+
+    </div>
+
+    <div class="score-ring">
+
+      <span id="scoreValue">
+        0%
+      </span>
+
+    </div>
+
+  </div>
+
+  <div id="resultBody"></div>
+
+  <button class="primary full" onclick="showScreen(5)">
+    Build My Full Plan →
+  </button>
+
+  <button class="secondary full" onclick="shareResult()">
+    Share My Result
+  </button>
+
+</section>
+
+
+<!-- SCREEN 5 -->
+<section id="screen5" class="screen">
+
+  <p class="eyebrow">YOUR FREE PLAN</p>
+
+  <h2 id="planTitle">
+    Your LifePath
+  </h2>
+
+  <div id="planBody"></div>
+
+  <button class="primary full" onclick="showScreen(6)">
+    Unlock Complete Plan — ₹199
+  </button>
+
+  <button class="secondary full" onclick="showScreen(6)">
+    View ₹99 Quick Report
+  </button>
+
+</section>
+
+
+<!-- SCREEN 6 -->
+<section id="screen6" class="screen">
+
+  <p class="eyebrow">PERSONALIZED UPGRADE</p>
+
+  <h2>Choose your plan.</h2>
+
+  <p class="sub">
+    Start with a small one-time purchase.
+    No subscription in this MVP.
+  </p>
+
+
+  <div class="price-card">
+
+    <div class="price-top">
+
+      <span>Quick Report</span>
+
+      <strong>₹99</strong>
+
+    </div>
+
+    <ul>
+
+      <li>Personalized summary</li>
+
+      <li>Priority recommendations</li>
+
+      <li>Personalized checklist</li>
+
+      <li>Shareable report</li>
+
+    </ul>
+
+    <button class="primary full" onclick="purchase('quick')">
+
+      Unlock for ₹99
+
+    </button>
+
+  </div>
+
+
+  <div class="price-card featured">
+
+    <div class="badge">
+      BEST VALUE
+    </div>
+
+    <div class="price-top">
+
+      <span>Complete Plan</span>
+
+      <strong>₹199</strong>
+
+    </div>
+
+    <ul>
+
+      <li>Everything in Quick Report</li>
+
+      <li>30-day preparation timeline</li>
+
+      <li>Priority checklist</li>
+
+      <li>Planning worksheet</li>
+
+      <li>Printable/shareable version</li>
+
+    </ul>
+
+    <button class="primary full" onclick="purchase('complete')">
+
+      Get My Complete Plan — ₹199
+
+    </button>
+
+  </div>
+
+  <p class="tiny center">
+
+    Demo checkout only.
+
+    Connect a compliant payment system before
+    publishing paid digital goods.
+
+  </p>
+
+</section>
+
+
+<!-- SCREEN 7 -->
+<section id="screen7" class="screen">
+
+  <p class="eyebrow">YOUR SAVED PLAN</p>
+
+  <h2 id="savedTitle">
+    Your LifePath Plan
+  </h2>
+
+  <div id="savedBody"></div>
+
+  <button class="primary full" onclick="sharePlan()">
+    Share My Plan
+  </button>
+
+  <button class="secondary full" onclick="editAnswers()">
+    Update Answers
+  </button>
+
+  <button class="secondary full" onclick="startAnother()">
+    Start Another Journey
+  </button>
+
+</section>
+
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
